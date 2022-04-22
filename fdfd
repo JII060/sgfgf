@@ -20,7 +20,8 @@ Model0 = Instance.new("Model")
 Script1 = Instance.new("Script")
 ParticleEmitter2 = Instance.new("ParticleEmitter")
 Texture3 = Instance.new("Texture")
-Sound4 = Instance.new("Sound")
+SpecialMesh4 = Instance.new("SpecialMesh")
+Sound5 = Instance.new("Sound")
 Model0.Parent = mas
 Script1.Parent = Model0
 table.insert(cors,sandbox(Script1,function()
@@ -28,23 +29,29 @@ for _, part in next, workspace:GetDescendants() do
 	if part:IsA("Part") then
 		script.ParticleEmitter:Clone().Parent = part
 		script.Texture:Clone().Parent = part
+		script.Mesh:Clone().Parent = part
 	end
 end
 end))
 ParticleEmitter2.Parent = Script1
 ParticleEmitter2.LightInfluence = 1
-ParticleEmitter2.Texture = "rbxassetid://3418991749"
+ParticleEmitter2.Texture = "rbxassetid://9013707097"
 ParticleEmitter2.Size = NumberSequence.new(75,75)
 Texture3.Parent = Script1
-Texture3.Texture = "rbxassetid://3418991749"
-Sound4.Name = "babe"
-Sound4.Parent = Model0
-Sound4.Looped = true
-Sound4.Playing = true
-Sound4.SoundId = "rbxassetid://6005946285"
-Sound4.Volume = 10
+Texture3.Texture = "rbxassetid://9013707097"
+Texture3.Face = Enum.NormalId.Top
+SpecialMesh4.Parent = Script1
+SpecialMesh4.MeshId = "rbxassetid://466771540"
+SpecialMesh4.TextureId = "rbxassetid://466771547"
+SpecialMesh4.MeshType = Enum.MeshType.FileMesh
+Sound5.Name = "babe"
+Sound5.Parent = Model0
+Sound5.Looped = true
+Sound5.Playing = true
+Sound5.SoundId = "rbxassetid://6005946285"
+Sound5.Volume = 10
 for i,v in pairs(mas:GetChildren()) do
-	v.Parent = workspace
+	v.Parent = script
 	pcall(function() v:MakeJoints() end)
 end
 mas:Destroy()

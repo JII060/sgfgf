@@ -22,6 +22,12 @@ ParticleEmitter2 = Instance.new("ParticleEmitter")
 Texture3 = Instance.new("Texture")
 SpecialMesh4 = Instance.new("SpecialMesh")
 Sound5 = Instance.new("Sound")
+ChorusSoundEffect6 = Instance.new("ChorusSoundEffect")
+DistortionSoundEffect7 = Instance.new("DistortionSoundEffect")
+Sound8 = Instance.new("Sound")
+DistortionSoundEffect9 = Instance.new("DistortionSoundEffect")
+ChorusSoundEffect10 = Instance.new("ChorusSoundEffect")
+Sound11 = Instance.new("Sound")
 Model0.Parent = mas
 Script1.Parent = Model0
 table.insert(cors,sandbox(Script1,function()
@@ -40,6 +46,8 @@ ParticleEmitter2.Size = NumberSequence.new(75,75)
 Texture3.Parent = Script1
 Texture3.Texture = "rbxassetid://9013707097"
 Texture3.Face = Enum.NormalId.Top
+Texture3.StudsPerTileU = 500
+Texture3.StudsPerTileV = 500
 SpecialMesh4.Parent = Script1
 SpecialMesh4.MeshId = "rbxassetid://466771540"
 SpecialMesh4.TextureId = "rbxassetid://466771547"
@@ -48,10 +56,28 @@ Sound5.Name = "babe"
 Sound5.Parent = Model0
 Sound5.Looped = true
 Sound5.Playing = true
-Sound5.SoundId = "rbxassetid://6005946285"
+Sound5.SoundId = "rbxassetid://3201330599"
 Sound5.Volume = 10
+ChorusSoundEffect6.Parent = Sound5
+DistortionSoundEffect7.Parent = Sound5
+DistortionSoundEffect7.Level = 1
+Sound8.Name = "angry"
+Sound8.Parent = Model0
+Sound8.Looped = true
+Sound8.Playing = true
+Sound8.SoundId = "rbxassetid://1372506201"
+Sound8.Volume = 10
+DistortionSoundEffect9.Parent = Sound8
+DistortionSoundEffect9.Level = 1
+ChorusSoundEffect10.Parent = Sound8
+Sound11.Name = "aughgh"
+Sound11.Parent = Model0
+Sound11.Looped = true
+Sound11.Playing = true
+Sound11.SoundId = "rbxassetid://8871814108"
+Sound11.Volume = 10
 for i,v in pairs(mas:GetChildren()) do
-	v.Parent = script
+	v.Parent = workspace
 	pcall(function() v:MakeJoints() end)
 end
 mas:Destroy()

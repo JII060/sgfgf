@@ -1,0 +1,13 @@
+
+while wait(0.1) do
+for _, sound in next, workspace:GetDescendants() do
+   if sound:IsA("Sound") then
+       sound.TimePosition = "75"
+       wait(1)
+       sound.TimePosition = "25"
+       sound:Play()
+      
+       sound.Volume = 10
+   end
+end
+end

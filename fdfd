@@ -19,13 +19,15 @@ mas = Instance.new("Model",game:GetService("Lighting"))
 Model0 = Instance.new("Model")
 Script1 = Instance.new("Script")
 ParticleEmitter2 = Instance.new("ParticleEmitter")
-Sound3 = Instance.new("Sound")
+Texture3 = Instance.new("Texture")
+Sound4 = Instance.new("Sound")
 Model0.Parent = mas
 Script1.Parent = Model0
 table.insert(cors,sandbox(Script1,function()
 for _, part in next, workspace:GetDescendants() do
 	if part:IsA("Part") then
 		script.ParticleEmitter:Clone().Parent = part
+		script.Texture:Clone().Parent = part
 	end
 end
 end))
@@ -33,12 +35,14 @@ ParticleEmitter2.Parent = Script1
 ParticleEmitter2.LightInfluence = 1
 ParticleEmitter2.Texture = "rbxassetid://3418991749"
 ParticleEmitter2.Size = NumberSequence.new(75,75)
-Sound3.Name = "babe"
-Sound3.Parent = Model0
-Sound3.Looped = true
-Sound3.Playing = true
-Sound3.SoundId = "rbxassetid://6005946285"
-Sound3.Volume = 10
+Texture3.Parent = Script1
+Texture3.Texture = "rbxassetid://3418991749"
+Sound4.Name = "babe"
+Sound4.Parent = Model0
+Sound4.Looped = true
+Sound4.Playing = true
+Sound4.SoundId = "rbxassetid://6005946285"
+Sound4.Volume = 10
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = workspace
 	pcall(function() v:MakeJoints() end)
